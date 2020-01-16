@@ -19,6 +19,37 @@ function dijkstras(graph, source){
     distance[source]=0;
 
     let unvisited = new Set(Object.keys(graph))
-    
+    let previous = {}
+
+    while (unvisited.size >0){
+        let currNode = minDistanceNode(unvisited, distance)
+        unvisited.delete(currNode);
+
+        for(let neighbor in graph[currNode]){
+            let distanceFromCurrToNeighbor = graph[currNode][neighbor]
+            let totalNeighbhorDistance = distance[currNode] + distanceFromCurrToNeighbor
+            
+            if(distance[neighbor]>totalNeighbhorDistance){
+                distance[neighbor]=totalNeighbhorDistance
+                previous[neighbor]= currNode
+            }         
+        }
+    }
+
+    return {distance, previous}
 
 }
+
+function minDistanceNode(nodes, distance){
+    return Array.from(nodes).reduce((minNode,node)=>(
+        distance[node] < distance[minNode] ? node: minNode
+    ))
+
+}
+
+
+
+let { distance, previous } = dijkstras(graph, 'a');
+
+console.log(distance);
+console.log(previous);
