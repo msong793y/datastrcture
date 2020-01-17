@@ -44,12 +44,10 @@ function minDistanceNode(nodes, distance){
     return Array.from(nodes).reduce((minNode,node)=>(
         distance[node] < distance[minNode] ? node: minNode
     ))
-
 }
-
-
 
 let { distance, previous } = dijkstras(graph, 'a');
 
 console.log(distance);
 console.log(previous);
+//comment
