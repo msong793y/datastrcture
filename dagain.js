@@ -43,7 +43,7 @@ const dijkstras = (graph, start)=>{
 
 const findMinNode = (unvisted, distance)=>{
         const nodeArr=Array.from(unvisted)
-        if(nodeArr.length===1) return nodeArr[0]
+        if(nodeArr.length===1) return nodeArr[0];
 
         let smallest=nodeArr[0]
         for(let i=1; i<nodeArr.length;i++){
