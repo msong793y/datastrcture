@@ -7,7 +7,7 @@ let graph = {
     'f': { 'c': 4, 'e': 9 }
 };
 
-// console.log(graph)
+// console.log(graphd)
 
 
 
