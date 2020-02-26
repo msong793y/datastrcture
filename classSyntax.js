@@ -7,7 +7,7 @@ class Student {
         this.tardies = 0;
     }
 
-    //instance method
+    //instance methoddf
     fullName(){
         return `Your full name is ${this.firstName} ${this.lastName}`;
     }
